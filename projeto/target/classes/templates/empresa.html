@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+ <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    	integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYai1GyVh/UjpbCx/TykizhlzhlZB6+fxT" crossorigin="anonymous">
+ </head>
+ <body>
+    <h1>Página da Empresa - Listar Empresas</h1>
+    <a href="cadastroEmpresa" class="btn btn-info"> Nova Empresa </a>
+    <table class="table table-striped"> 
+    <thead> 
+    <tr>
+    	<td>Código</td>
+    	<td>CNPJ</td>
+    	<td>Empresa</td>
+    	<td>Responsável</td>
+    	<td>Contato</td>
+    	<td>Opções</td>	
+    </tr>
+    </thead>
+    	<tbody> 
+	    	<tr th:each="emp : ${listaEmpresas}">
+	    		<td th:text="${emp.id}"></td>
+	    		<td th:text="${emp.cnpj}></td>
+	    		<td th:text="${emp.nome}></td>
+	    		<td th:text="${emp.responsavel}></td>
+	    		<td th:text="${emp.email}></td>
+	    		<td> [A][D]</td>
+	    	</tr>
+    	</tbody>
+    </table>
+ </body>
+</html>
